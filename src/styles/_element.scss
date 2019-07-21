@@ -1,0 +1,9 @@
+@charset "UTF-8";
+//--------------------- button ---------------------//
+.ui-button {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: unit(50);
+    height: unit(30);
+    background: $main;
+}

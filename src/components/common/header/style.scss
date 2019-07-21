@@ -1,0 +1,20 @@
+// TODO header的样式
+.com-header {
+  height: $header-h;
+  background: #f5f5f5;
+
+  &__backbtn {
+    float: left;
+    width: $header-h;
+    height: $header-h;
+    @include bgurl('back.png');
+  }
+
+  &__title {
+    line-height: $header-h;
+    font-size: unit(24);
+    color: #333;
+    text-align: center;
+    @extend %tof;
+  }
+}
