@@ -36,5 +36,5 @@ router.config({
  * exact: 可选 {boolean}是否完全匹配
  */
 router.register({
-  rentHouse: rentHouseRoutes // TODO 注册路由
+  rentHouse111: rentHouseRoutes // TODO 注册路由
 })

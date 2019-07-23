@@ -6,7 +6,7 @@ export default class rentHouseContainer extends React.Component {
   render() {
     return (
       <div className='mod-renthouse'>
-        <Routes path="takeout" />
+        <Routes path="rentHouse111" />
       </div>
     )
   }

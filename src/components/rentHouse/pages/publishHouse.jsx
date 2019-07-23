@@ -2,9 +2,9 @@ import React from 'react'
 import { actions, smart } from '@gem-mine/durex'
 import request from '@gem-mine/request'
 import style from '../style'
-const { takeout } = request
+const { rentHouse } = request
 
-export class OrderForm extends React.Component {
+export class PublishHouse extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -18,7 +18,7 @@ export class OrderForm extends React.Component {
     }
   }
   componentDidMount() {
-    actions.global.setTitle('配送表单')
+    actions.global.setTitle('发布房源')
     const props = this.props
     const { id } = props.match.params
     if (id && props.productList.length) {
@@ -75,7 +75,9 @@ export class OrderForm extends React.Component {
     const { product, amount } = this.state
 
     return (
-      <div className={style.form_wrap}>
+      <div className='renthouse-publish'>
+        
+      
         {product && <ul className={style.form}>
           <li className={style.form_item}>
             <span className={style.form_label}>商品名称</span>

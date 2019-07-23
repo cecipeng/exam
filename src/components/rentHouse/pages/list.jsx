@@ -1,43 +1,24 @@
 import React from 'react'
 import { actions, smart } from '@gem-mine/durex'
 import style from '../style'
-
+import _ from 'lodash'
 export class List extends React.Component {
   componentDidMount() {
-    actions.global.setTitle('外卖商品列表页')
-    actions.takeout.getProductList()
-  }
-
-  buy(ele) {
-    if (!ele.num) return
-    if (ele.id) {
-      actions.routing.push(`/list/${ele.id}`)
-    } else {
-      // alert('w')
-    }
+    actions.global.setTitle('列表页')
+    actions.rentHouse.fetchHouseList()
   }
   render() {
-    const productList = this.props.productList || []
+    const { houseList } = this.props
     return (
-      <div>
-        <ul className={style.takeoutList}>
-          {productList.length
-            ? productList.map((ele, index) => {
-              return (<li key={index} className={`${style.takeoutList_item} ${ele.num === 0 ? 'disable' : ''}`}>
-                <p className={`${style.takeoutList_img}`} style={{ backgroundImage: `url(${ele.src})` }} />
-                <dl className={style.takeoutList_detail}>
-                  <dt className={style.takeoutList_title}>{ele.title}</dt>
-                  <dd className={style.takeoutList_num}>{ele.num}</dd>
-                  <dd className={style.takeoutList_subtitle}>{ele.describe}</dd>
-                  <dd className={style.takeoutList_price}>￥ {ele.price}</dd>
-                  <dd className={style.takeoutList_btn} onClick={() => { this.buy(ele) }}>购买</dd>
-                </dl>
-              </li>)
-            })
-            : null
-          }
-        </ul>
-      </div>
+      <ul className='renthouse-list'>
+        {
+          !_.isEmpty(houseList) && houseList.map((item, index) => (
+            <li className="renthouse-list__item" key={index}>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
     )
   }
 }
@@ -45,7 +26,7 @@ export class List extends React.Component {
 export default smart(
   state => {
     return {
-      productList: state.takeout.productList
+      houseList: state.rentHouse.houseList
     }
   }
 )(List)

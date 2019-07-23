@@ -1,28 +1,20 @@
 import durex from '@gem-mine/durex'
 import request from '@gem-mine/request'
-const { takeout } = request
+const { rentHouse } = request
 
 durex.model({
-  name: 'takeout',
+  name: 'rentHouse',
   state: {
-    // count: 7
-    productList: [],
-    userOrders: []
+    houseList: []
   },
   reducers: {
   },
   effects: {
-    getProductList() {
-      takeout.get('/product/list')
-        .then(res => {
-          this.setField({
-            productList: res.data || []
-          })
+    fetchHouseList() {
+      rentHouse.get('/house/list').then(res => {
+        this.setField({
+          houseList: res.data || []
         })
-    },
-    setUserOrders(arr) {
-      this.setField({
-        userOrders: Array.isArray(arr) ? arr : []
       })
     }
   }
