@@ -12,11 +12,13 @@ export class List extends React.Component {
     return (
       <ul className='renthouse-list'>
         {
-          !_.isEmpty(houseList) && houseList.map((item, index) => (
-            <li className="renthouse-list__item" key={index}>
-              {item}
-            </li>
-          ))
+          !_.isEmpty(houseList) && houseList.map((item, index) => {
+            return (
+              <li className="renthouse-list__item" key={index}>
+                {item.rentMode}
+              </li>
+            )
+          })
         }
       </ul>
     )

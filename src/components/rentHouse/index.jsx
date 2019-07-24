@@ -1,12 +1,13 @@
 import React from 'react'
-import { Routes } from '@gem-mine/durex'
-import style from './style'
 
-export default class rentHouseContainer extends React.Component {
+import List from './pages/list'
+import './style'
+
+export default class RentHouseContainer extends React.Component {
   render() {
     return (
-      <div className='mod-renthouse'>
-        <Routes path="rentHouse111" />
+      <div className="mod-renthouse">
+        <List />
       </div>
     )
   }

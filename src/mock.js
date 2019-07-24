@@ -63,5 +63,3 @@ Mock.mock('/publish', 'post', (res, req) => {
   houseList.push(_newHouse)
   return houseList
 })
-
-

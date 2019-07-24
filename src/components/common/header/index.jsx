@@ -1,6 +1,6 @@
 import React from 'react'
 import { actions, smart } from '@gem-mine/durex'
-import style from './style'
+import './style'
 // TODO 都要检查下，删除不要的代码
 
 export class Header extends React.Component {
@@ -22,10 +22,10 @@ export class Header extends React.Component {
     return (
       <div className="com-header layout-bfc">
         <div className="layout-bfc__left">
-          <span className="com-header__backbtn" onClick={actions.routing.goBack()}></span>
+          <span className="com-header__backbtn" onClick={actions.routing.goBack()} />
         </div>
         <div className="layout-bfc__right">
-          <button className='com-header__btn' onClick={actions.routing.push('/publish')}>发布房源</button>
+          <button className='com-header__btn' onClick={() => { actions.routing.push('/list') }}>发布房源</button>
         </div>
         <div className="layout-bfc__content">
           <h1 className="com-header__title">{title}</h1>

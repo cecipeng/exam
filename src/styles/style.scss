@@ -1,25 +1,17 @@
 @charset "UTF-8";
 //--------------------- init ---------------------//
-
 // variables and mixins
-@import "_base/_mixin";
-@import "_base/_variables";
-@import "_base/_breakpoint";
+@import "_base/mixin";
+@import "_base/variables";
+@import "_base/breakpoint";
 
 // reset
 // @import "_base/_normalize";      // if you need
-@import "_base/_reset";
-
+@import "_base/reset";
 
 //--------------------- Components ---------------------//
- 
+
 // base
 // @import "fonts/iconfont";      // if you need
-@import "_base/_layout";
-
-// Common Components
-@import "../components/common/header/style";
-
-
-//--------------------- pages ---------------------//
-@import "../components/rentHouse/style"; // 租房
+@import "_base/layout";
+@import "element";

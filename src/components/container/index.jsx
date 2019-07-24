@@ -1,5 +1,5 @@
 import React from 'react'
-import rentHouseContainer from '../renthouse' // TODO 模块容器
+import RentHouseContainer from '../renthouse' // TODO 模块容器
 import Header from '../common/header'
 
 export default class Container extends React.Component {
@@ -10,7 +10,7 @@ export default class Container extends React.Component {
           <Header />
         </div>
         <div className="layout__body">
-          <rentHouseContainer />
+          <RentHouseContainer />
         </div>
       </div>
     )

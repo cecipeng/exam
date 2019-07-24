@@ -1,4 +1,9 @@
 @charset "UTF-8";
+// variables and mixins
+@import "_base/mixin";
+@import "_base/variables";
+@import "_base/breakpoint";
+
 //--------------------- button ---------------------//
 .ui-button {
     display: inline-block;

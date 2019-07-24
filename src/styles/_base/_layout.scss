@@ -1,4 +1,9 @@
 @charset "UTF-8";
+// variables and mixins
+@import "./mixin";
+@import "./variables";
+@import "./breakpoint";
+
 //--------------------- 根节点设置 ---------------------//
 body {
     min-width: $min-w; // TODO
