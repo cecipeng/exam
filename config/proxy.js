@@ -21,7 +21,7 @@ const config = {
       url: 'http://cors.zmei.me'
     }
   },
-  rentHouse: { // TODO
+  ceui: { // TODO
     defaults: {
       url: ''
     }

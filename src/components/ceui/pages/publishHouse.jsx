@@ -2,7 +2,7 @@ import React from 'react'
 import { actions, smart } from '@gem-mine/durex'
 import request from '@gem-mine/request'
 import style from '../style'
-const { rentHouse } = request
+const { ceui } = request
 
 export class PublishHouse extends React.Component {
   constructor() {
@@ -75,7 +75,7 @@ export class PublishHouse extends React.Component {
     const { product, amount } = this.state
 
     return (
-      <div className='renthouse-publish'>
+      <div className='ceui-publish'>
         
       
         {product && <ul className={style.form}>

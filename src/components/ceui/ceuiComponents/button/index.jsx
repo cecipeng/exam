@@ -6,5 +6,5 @@ import React from 'react'
  * @returns {JSX} template
  */
 export default function Button({ label }) {
-  return <button className="button" type="button">{label}</button>
+  return <button className="button" onClick={()=>{alert('dd')}} type="button">{label}</button>
 }

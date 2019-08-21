@@ -1,5 +1,6 @@
 import React from 'react'
-import RentHouseContainer from '../renthouse' // TODO 模块容器
+import { smart, withRouter, Routes } from '@gem-mine/durex'
+import CeuiContainer from '../ceui' // TODO 模块容器
 import Header from '../common/header'
 
 export default class Container extends React.Component {
@@ -10,7 +11,7 @@ export default class Container extends React.Component {
           <Header />
         </div>
         <div className="layout__body">
-          <RentHouseContainer />
+          <Routes />
         </div>
       </div>
     )

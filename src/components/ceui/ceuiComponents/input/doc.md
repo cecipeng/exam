@@ -1,14 +1,14 @@
 ---
-test-front-matter: 'hello world'
+test-front-matter: 'input'
 imports:
-  Button: './button.jsx'
+  input: './index.jsx'
 ---
-# Hello World
+# input
 
 This is an example component
 
 ```render html
-<Button label="Hello World" />
+<input value='123' />
 ```
 
  ## 参数说明

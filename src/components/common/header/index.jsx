@@ -1,6 +1,8 @@
 import React from 'react'
 import { actions, smart } from '@gem-mine/durex'
+import Nav from './nav'
 import './style'
+
 // TODO 都要检查下，删除不要的代码
 
 export class Header extends React.Component {
@@ -17,18 +19,14 @@ export class Header extends React.Component {
     })
   }
   render() {
-    const { isMenuOpen } = this.state
-    const { title } = this.props
     return (
       <div className="com-header layout-bfc">
         <div className="layout-bfc__left">
-          <span className="com-header__backbtn" onClick={actions.routing.goBack()} />
+          <span className="com-header__logo" />
+          <h1 className="com-header__title">CeUI</h1>
         </div>
         <div className="layout-bfc__right">
-          <button className='com-header__btn' onClick={() => { actions.routing.push('/list') }}>发布房源</button>
-        </div>
-        <div className="layout-bfc__content">
-          <h1 className="com-header__title">{title}</h1>
+          <Nav />
         </div>
       </div>
     )
@@ -38,7 +36,7 @@ export class Header extends React.Component {
 export default smart(
   state => {
     return {
-      title: state.global.title
+      
     }
   },
   props => {

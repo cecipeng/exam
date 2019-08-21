@@ -1,9 +1,9 @@
 import durex from '@gem-mine/durex'
 import request from '@gem-mine/request'
-const { rentHouse } = request
+const { ceui } = request
 
 durex.model({
-  name: 'rentHouse',
+  name: 'ceui',
   state: {
     houseList: []
   },
@@ -11,7 +11,7 @@ durex.model({
   },
   effects: {
     fetchHouseList() {
-      rentHouse.get('/house/list').then(res => {
+      ceui.get('/house/list').then(res => {
         this.setField({
           houseList: res.data || []
         })
