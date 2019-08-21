@@ -22,7 +22,16 @@ exports.vendor = []
 // exports.port = 9000
 
 // 自定义的 loaders
-exports.loaders = []
+exports.loaders = [
+  // {
+  //   test: /\.mdx$/i,
+  //   loader: 'babel-loader!markdown-component-loader'
+  // },
+  {
+    test: /\.md$/,
+    loader: 'babel-loader!react-markdown-loader'
+  }
+]
 
 // 自定义的 plugins
 exports.plugins = []
