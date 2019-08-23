@@ -19,15 +19,18 @@ $BREAKPOINTS: () !default;
     @warn "Your breakpoints aren't a map! See https://github.com/snugug/respond-to#api if you'd like a reminder on how to use Respond-to";
     @content;
   }
+
   @else if map-has-key($BREAKPOINTS, $context) {
     @include breakpoint(map-get($BREAKPOINTS, $context), $no-query) {
       @content;
     }
   }
+
   @else if not map-has-key($BREAKPOINTS, $context) {
     @warn "`#{$context}` isn't a defined breakpoint! Please add it using `$breakpoints: add-breakpoint(`#{$context}`, $value);`";
     @content;
   }
+
   @else {
     @warn "You haven't created any breakpoints yet! Make some already! See https://github.com/snugug/respond-to#api if you'd like a reminder on how to use Respond-to";
     @content;
@@ -44,11 +47,14 @@ $BREAKPOINTS: () !default;
   @if length($breakpoints) == 0 {
     @return $output;
   }
+
   @else {
     @if map-has-key($breakpoints, $name) and $overwrite != true {
       @warn "You already have a breakpoint named `#{$name}`, please choose another breakpoint name, or pass in `$overwrite: true` to overwrite the previous breakpoint.";
+
       @return $breakpoints;
     }
+
     @else if not map-has-key($breakpoints, $name) or $overwrite == true {
       @return map-merge($breakpoints, $output);
     }
@@ -61,11 +67,13 @@ $BREAKPOINTS: () !default;
   @if length($BREAKPOINTS) == 0 {
     $BREAKPOINTS: $output !global;
   }
+
   @else {
     @if map-has-key($BREAKPOINTS, $name) and $overwrite != true {
       @warn "You already have a breakpoint named `#{$name}`, please choose another breakpoint name, or pass in `$overwrite: true` to overwrite the previous breakpoint.";
       $BREAKPOINTS: $BREAKPOINTS !global;
     }
+
     @else if not map-has-key($BREAKPOINTS, $name) or $overwrite == true {
       $BREAKPOINTS: map-merge($BREAKPOINTS, $output) !global;
     }

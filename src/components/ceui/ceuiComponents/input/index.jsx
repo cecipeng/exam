@@ -6,5 +6,5 @@ import React from 'react'
  * @returns {JSX} template
  */
 export default function Input() {
-  return <input className="input" type='text' ></input>
+  return <input className="input" type="text" />
 }

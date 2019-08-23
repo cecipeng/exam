@@ -36,12 +36,12 @@ export class Header extends React.Component {
 export default smart(
   state => {
     return {
-      
+
     }
   },
   props => {
     return {
-      
+
     }
   }
 )(Header)

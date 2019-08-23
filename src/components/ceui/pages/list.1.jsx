@@ -11,7 +11,7 @@ export class List extends React.Component {
   render() {
     const { houseList } = this.props
     return (
-      <ul className='ceui-list'>
+      <ul className="ceui-list">
         {
           !_.isEmpty(houseList) && houseList.map((item, index) => {
             return (

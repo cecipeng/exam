@@ -1,6 +1,6 @@
 import { asyncLoad } from 'global/util/async-load'
 
-import Container from '../../components/container'
+// ----- Components ----- //
 import CeuiContainer from '../../components/ceui' // TODO 默认加载的组件
 
 // TODO 路由配置
@@ -13,12 +13,12 @@ export default {
     homepage: {
       component: asyncLoad('components/ceui/pages/homepage'),
       description: '首页',
-      index: true,
+      index: true
     },
     list: {
       path: '/list',
       component: asyncLoad('components/ceui/pages/list'),
-      description: '组件列表',
+      description: '组件列表'
     }
   }
 }

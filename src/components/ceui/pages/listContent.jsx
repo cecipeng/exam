@@ -6,9 +6,9 @@ export class ListContent extends React.Component {
   render() {
     const { currentComponent } = this.props
     const ComponentDemo = asyncLoad(`components/ceui/ceuiComponents/${currentComponent.name}/doc.md`)
-    
+
     return (
-      <div className='ceui-listcontent'>
+      <div className="ceui-listcontent">
         <ComponentDemo />
       </div>
     )
@@ -18,7 +18,7 @@ export class ListContent extends React.Component {
 export default smart(
   state => {
     return {
-      
+
     }
   }
 )(ListContent)

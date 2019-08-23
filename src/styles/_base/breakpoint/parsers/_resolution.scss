@@ -14,9 +14,11 @@
 
     @for $i from 1 through $length {
       $query: '#{$query-print} #{$leader}#{nth($resolutions, $i)}';
+
       @if $i == 1 {
         $query-holder: $query;
       }
+
       @else {
         $query-holder: '#{$query-holder}, #{$query}';
       }
@@ -24,6 +26,7 @@
 
     @return $query-holder;
   }
+
   @else {
     // Return with attached resolution
     @return $query-print;

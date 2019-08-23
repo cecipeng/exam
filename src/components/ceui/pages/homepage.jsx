@@ -19,7 +19,7 @@ export class Homepage extends React.Component {
 export default smart(
   state => {
     return {
-      
+
     }
   }
 )(Homepage)

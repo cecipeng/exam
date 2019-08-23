@@ -5,16 +5,12 @@ $Breakpoint-Settings: (
   'default media': all,
   'default feature': min-width,
   'default pair': width,
-
   'force all media type': false,
   'to ems': false,
   'transform resolutions': true,
-
   'no queries': false,
   'no query fallbacks': false,
-
   'base font size': 16px,
-
   'legacy syntax': false
 );
 
@@ -28,9 +24,7 @@ $breakpoint: () !default;
 @import 'breakpoint/helpers';
 @import 'breakpoint/parsers';
 @import 'breakpoint/no-query';
-
 @import 'breakpoint/respond-to';
-
 @import "breakpoint/legacy-settings";
 
 //////////////////////////////
@@ -75,11 +69,13 @@ $breakpoint: () !default;
     @if ($type == 'bool') {
       $print: true;
     }
+
     @else if ($type == 'string') {
       @if $query-fallback == breakpoint-get('no query fallbacks') {
         $print: true;
       }
     }
+
     @else if ($type == 'list') {
       @each $wrapper in breakpoint-get('no query fallbacks') {
         @if $query-fallback == $wrapper {
@@ -97,6 +93,7 @@ $breakpoint: () !default;
           @content;
         }
       }
+
       @else {
         @content;
       }

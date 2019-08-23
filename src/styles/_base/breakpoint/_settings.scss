@@ -5,6 +5,7 @@
   @if map-has-key($breakpoint, $setting) {
     @return true;
   }
+
   @else {
     @return false;
   }
@@ -17,6 +18,7 @@
   @if breakpoint-has($setting) {
     @return map-get($breakpoint, $setting);
   }
+
   @else {
     @return map-get($Breakpoint-Settings, $setting);
   }
@@ -30,6 +32,7 @@
     @warn "Words in Breakpoint settings should be separated by spaces, not dashes or underscores. Please replace dashes and underscores between words with spaces. Settings will not work as expected until changed.";
   }
   $breakpoint: map-merge($breakpoint, ($setting: $value)) !global;
+
   @return true;
 }
 
@@ -44,6 +47,7 @@
 @mixin bkpt-change($setting, $value) {
   @include breakpoint-change($setting, $value);
 }
+
 @mixin bkpt-set($setting, $value) {
   @include breakpoint-change($setting, $value);
 }
@@ -59,6 +63,7 @@
   @each $setting in $settings {
     $breakpoint: map-remove($breakpoint, $setting) !global;
   }
+
   @return true;
 }
 

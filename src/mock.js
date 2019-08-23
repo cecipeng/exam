@@ -17,7 +17,7 @@ let houseList = [
     houseImgList: [
       'https://pic1.ajkimg.com/display/anjuke/dddd17d568ceffa586bd4c4dbd9cd002/750x450c.jpg',
       'https://pic1.ajkimg.com/display/anjuke/0f37bf882dd4b4ce390990a77213e52c/750x450c.jpg',
-      'https://pic1.ajkimg.com/display/anjuke/92bf4e51629bb74debba55c6f5d903d0/750x450c.jpg',
+      'https://pic1.ajkimg.com/display/anjuke/92bf4e51629bb74debba55c6f5d903d0/750x450c.jpg'
     ]
   },
   {
@@ -35,7 +35,7 @@ let houseList = [
     houseImgList: [
       'https://pic1.ajkimg.com/display/anjuke/d43ddd6e00fae39c9d76cc046b4a329c/420x315c.jpg',
       'https://pic1.ajkimg.com/display/anjuke/059c40e54c27011771c499f412f51e88/420x315c.jpg',
-      'https://pic1.ajkimg.com/display/anjuke/681eb5d25e9412e429cd6e6efecb4e40/420x315c.jpg',
+      'https://pic1.ajkimg.com/display/anjuke/681eb5d25e9412e429cd6e6efecb4e40/420x315c.jpg'
     ]
   }
 ]

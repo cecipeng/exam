@@ -10,13 +10,17 @@
     "@gem-mine/immutable": "^1.0.0",
     "@gem-mine/request": "^1.0.5",
     "create-react-class": "^15.6.3",
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
     "markdown-component-loader": "^1.1.0",
     "mockjs": "^1.0.1-beta3",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-markdown-loader": "^1.2.1"
+    "react-markdown-loader": "^1.2.1",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

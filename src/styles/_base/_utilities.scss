@@ -3,16 +3,19 @@
 //--------------------- display ---------------------//
 
 .show {
-	display: block;
+  display: block;
 }
+
 .ibshow {
-	display: inline-block;
+  display: inline-block;
 }
+
 .hide {
-	display: none;
+  display: none;
 }
+
 .oh {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 
@@ -24,23 +27,25 @@
 
 //--------------------- float ---------------------//
 
-.fl { 
-	float: left;
-} 
-.fr { 
-	float: right;
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
 }
 
 
 //--------------------- clearfix ---------------------//
 
-.cl { 
-	clear: both;
+.cl {
+  clear: both;
 }
-.clx:after { 
-	content: ""; 
-	display: table; 
-	clear: both;
+
+.clx::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
@@ -61,18 +66,20 @@
 
 //--------------------- font ---------------------//
 
-.tl { text-align: left; } 
-.tc { text-align: center; } 
+.tl { text-align: left; }
+.tc { text-align: center; }
 .tr { text-align: right; }
-.fz12 { font-size: 12px; } 
+.fz12 { font-size: 12px; }
 .fz14 { font-size: 14px; }
-.textoverflow { 
-	overflow: hidden; 
-	white-space: nowrap; 
-	text-overflow: ellipsis;
+
+.textoverflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.wordbreak { 
-	word-break: break-all; 
-	word-wrap: break-word; 
+
+.wordbreak {
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .nowrap { white-space: nowrap; }

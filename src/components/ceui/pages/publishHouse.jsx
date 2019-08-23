@@ -75,9 +75,8 @@ export class PublishHouse extends React.Component {
     const { product, amount } = this.state
 
     return (
-      <div className='ceui-publish'>
-        
-      
+      <div className="ceui-publish">
+
         {product && <ul className={style.form}>
           <li className={style.form_item}>
             <span className={style.form_label}>商品名称</span>

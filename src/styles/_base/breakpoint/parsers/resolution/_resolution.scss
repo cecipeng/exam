@@ -11,6 +11,7 @@
     @if type-of(nth($resolution, 1)) == 'number' {
       $value: nth($resolution, 1);
     }
+
     @else {
       $value: nth($resolution, 2);
     }
@@ -19,6 +20,7 @@
     @if index($resolution, 'min-resolution') {
       $feature: 'min-';
     }
+
     @else if index($resolution, 'max-resolution') {
       $feature: 'max-';
     }
@@ -28,6 +30,7 @@
     // If we're not dealing with dppx,
     @if unit($value) != 'dppx' {
       $base: 96dpi;
+
       @if unit($value) == 'dpcm' {
         $base: 243.84dpcm;
       }
@@ -41,6 +44,7 @@
       $output: append($output, $webkit, space);
       $output: append($output, $moz, space);
     }
+
     @else {
       $webkit: '';
       $moz: '';
@@ -53,7 +57,6 @@
       $output: append($output, $moz, space);
       $output: append($output, $fallback, space);
     }
-
   }
 
   @return $output;

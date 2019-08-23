@@ -8,13 +8,13 @@ import _ from 'lodash'
 
 export class List extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       currentComponent: COMPONENTS_LIST_CONTANTS[0]
     }
     this.handleToggleComponentsView = this.handleToggleComponentsView.bind(this)
   }
-  handleToggleComponentsView (newObj) {
+  handleToggleComponentsView(newObj) {
     this.setState({
       currentComponent: newObj
     })
@@ -44,7 +44,7 @@ export class List extends React.Component {
 export default smart(
   state => {
     return {
-      
+
     }
   }
 )(List)

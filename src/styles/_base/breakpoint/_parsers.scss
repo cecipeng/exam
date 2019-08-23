@@ -47,6 +47,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
     @if ($or-list == false and breakpoint-get('legacy syntax') == false) {
       $query-string: breakpoint-parse($query);
     }
+
     @else {
       $length: length($query);
 
@@ -66,8 +67,10 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
         $query-string: breakpoint-parse($mq);
       }
+
       @else {
         $query-string: '';
+
         @for $i from 1 through $length {
           $query-string: $query-string + if($i == 1, '', ', ') + breakpoint-parse(nth($query, $i));
         }
@@ -75,15 +78,17 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
     }
 
     $return: ('query': $query-string,
-        'fallback': $query-fallback,
-        'context holder': $private-breakpoint-context-holder,
-        'query count': $private-breakpoint-query-count
-    );
+    'fallback': $query-fallback,
+    'context holder': $private-breakpoint-context-holder,
+    'query count': $private-breakpoint-query-count
+  );
+
     @if length($contexts) > 0 and nth($contexts, 1) != false {
       @if $query-fallback != false {
         $context-setter: private-breakpoint-set-context('no-query', $query-fallback);
       }
       $context-map: ();
+
       @each $context in $contexts {
         $context-map: map-merge($context-map, ($context: breakpoint-get-context($context)));
       }
@@ -114,6 +119,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
 
   $force-all: ((breakpoint-get('force all media type') == true) and (breakpoint-get('default media') == 'all'));
   $empty-media: true;
+
   @if ($force-all == true) or (breakpoint-get('default media') != 'all') {
     // Force the print of the default media type if (force all is true and default media type is all) or (default media type is not all)
     $query-print: breakpoint-get('default media');
@@ -149,6 +155,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
           $context-setter: private-breakpoint-set-context(media, $query-print);
         }
       }
+
       @else {
         $parsed: breakpoint-parse-single($feature, $empty-media, $first);
         $query-print: '#{$query-print} #{$parsed}';
@@ -160,6 +167,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
       @if (breakpoint-is-resolution($feature) != false) {
         $query-resolution: $feature;
       }
+
       @else {
         $parsed: null;
         // If it's a string/number pair,
@@ -167,6 +175,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
         // then we parse it as a normal double
         $alpha: nth($feature, 1);
         $beta: nth($feature, 2);
+
         @if breakpoint-single-string($alpha) or breakpoint-single-string($beta) {
           $parsed: breakpoint-parse-single($alpha, $empty-media, $first);
           $query-print: '#{$query-print} #{$parsed}';
@@ -174,6 +183,7 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
           $parsed: breakpoint-parse-single($beta, $empty-media, $first);
           $query-print: '#{$query-print} #{$parsed}';
         }
+
         @else {
           $parsed: breakpoint-parse-double($feature, $empty-media, $first);
           $query-print: '#{$query-print} #{$parsed}';
@@ -187,7 +197,6 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
       $query-print: '#{$query-print} #{$parsed}';
       $first: false;
     }
-
   }
 
   @if ($query-resolution != false) {
@@ -198,11 +207,13 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
   @each $f, $v in $private-breakpoint-context-holder {
     $v-holder: $v;
     $length: length($v-holder);
+
     @if length($v-holder) < $private-breakpoint-query-count {
       @for $i from $length to $private-breakpoint-query-count {
         @if $f == 'media' {
           $v-holder: append($v-holder, breakpoint-get('default media'));
         }
+
         @else {
           $v-holder: append($v-holder, false);
         }

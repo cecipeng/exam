@@ -6,6 +6,7 @@ import Forbidden from 'components/common/exception/403'
 
 // 路由引入
 import ceuiRoutes from './ceui' // TODO 按模块拆分文件
+import chartRoomRoutes from './chartRoom'
 
 /**
  * 路由配置，包括：
@@ -36,5 +37,6 @@ router.config({
  * exact: 可选 {boolean}是否完全匹配
  */
 router.register({
-  ceui: ceuiRoutes // TODO 注册路由
+  ceui: ceuiRoutes, // TODO 注册路由
+  chartRoom: chartRoomRoutes
 })
