@@ -1,10 +1,12 @@
-export const COMPONENTS_LIST_CONTANTS = [
+export const COMPONENTS_LIST = [
   {
-    id: 1001,
-    name: 'button'
+    identifier: '1001',
+    name: 'modal',
+    demo: ['base', 'footer', 'width', 'btnText']
   },
   {
-    id: 1002,
-    name: 'input'
+    identifier: '1002',
+    name: 'chart',
+    demo: ['base','select']
   }
 ]

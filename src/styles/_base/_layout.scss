@@ -2,12 +2,11 @@
 // variables and mixins
 @import "./mixin";
 @import "./variables";
-@import "./breakpoint";
 
 //--------------------- 根节点设置 ---------------------//
 body {
-  min-width: $min-w; // TODO
-  overflow: hidden; // TODO
+  min-width: $min-w; 
+  overflow: auto;
 }
 
 #root {
@@ -51,9 +50,6 @@ body {
     width: $wrapper-w;
     margin: 0 auto;
 
-    @include breakpoint($mq-s) {
-      width: $min-w;
-    }
   }
 
   //固定悬浮在居中内容外侧

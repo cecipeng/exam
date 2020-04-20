@@ -1,22 +1,215 @@
 // variables and mixins
-@import "../../styles/_base/mixin";
-@import "../../styles/_base/variables";
-@import "../../styles/_base/breakpoint";
+@import "../../styles/_base/base";
 
-.mod-ceui {
+:global {
+  * {
+    font-size: unit(14);
+  }
+  // layout
+  .main {
+    height: 100%;
+  }
+  .mod-ceui {
+    height: 100%;
+  }
+  .ceui-layout {
+    position: relative;
+    padding-top: $header-h;
+    height: 100%;
+    min-width: unit(1200);
+    overflow-x: auto;
+    overflow-y: hidden;
 
-}
+    &__header {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: $header-h;
+    }
 
-.ceui {
-  // 列表
-  &-list {
-    &__item {
-
+    &__body {
+      height: 100%;
     }
   }
 
-  // 发布房源
-  &-publish {
+  .com-header {
+    padding: 0 unit(20);
+    background-color: $main;
 
+    &__title {
+      float: left;
+      height: $header-h;
+      margin-right: unit(40);
+      line-height: $header-h;
+      font-size: unit(30);
+      color: #fff;
+    }
+  }
+
+  .com-nav {
+    float: left;
+    height: $header-h;
+    &__item {
+      float: left;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: unit(20);
+      height: 100%;
+      line-height: $header-h;
+      font-size: unit(16);
+      color: #fff;
+    }
+  }
+
+  .ceui-list {
+    position: relative;
+    height: 100%;
+    padding-left: unit(200);
+    // layout
+    &__sider {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: unit(200);
+      border-right: 1px solid #ddd;
+    }
+
+    &__content {
+      height: 100%;
+      overflow: auto;
+      padding: unit(20);
+    }
+
+    // 导航
+    &__nav {
+      &-item {
+        height: unit(50);
+        line-height: unit(50);
+        padding: 0 unit(20);
+        font-size: unit(14);
+        color: #666;
+        border-left: unit(5) solid transparent;
+
+        @extend %tof;
+
+        &.active {
+          color: $main;
+          border-left-color: $main;
+          background-color: rgba($main, 0.1);
+        }
+      }
+    }
+  }
+
+  .ceui-md {
+    h1 {
+      margin: unit(30) 0;
+      font-size: unit(36);
+      font-weight: bold;
+      color: #333;
+    }
+    h2 {
+      margin: unit(50) 0 unit(20);
+      font-size: unit(20);
+      font-weight: bold;
+      color: #333;
+    }
+    p {
+      margin: unit(10) 0;
+      font-size: unit(16);
+      color: #666;
+    }
+    table {
+      width: 70%;
+      table-layout: fixed;
+      border: 1px solid #ddd;
+      td {
+        padding: unit(20);
+        line-height: unit(30);
+        font-size: unit(16);
+        color: #666;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      th {
+        line-height: unit(30);
+        font-size: unit(16);
+        color: #666;
+        text-align: left;
+      }
+      thead {
+        background-color: #eee;
+
+      }
+    }
+  }
+
+  .ceui-component {
+    &__list {
+      margin-top: unit(50);
+      @extend %tof;
+      li {
+        width: 70%;
+        margin-bottom: unit(20);
+        list-style: none;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+
+  .ceui-demo {
+    padding: unit(20);
+    border-bottom: 1px solid #ddd;
+  }
+
+  .ceui-democode {
+    position: relative;
+    
+    &__viewbtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: unit(5);
+      font-size: unit(16);
+      color: #fff;
+      background-color: $main;
+    }
+    h1 {
+      margin: unit(10) 0;
+      font-size: unit(16);
+      font-weight: bold;
+      color: #333;
+    }
+    p {
+      margin: unit(10) 0;
+      font-size: unit(16);
+      color: #666;
+    }
+    &__body {
+      padding: unit(20);
+      .example {
+        display: none;
+      }
+      .run {
+        display: none;
+      }
+      .source {
+        padding: unit(20);
+        background-color: #eee;
+        code {
+          line-height: unit(20);
+          font-size: unit(16);
+          color: #666;
+        }
+      }
+      &.open {
+        .example {
+          display: block;
+        }
+      }
+    }
   }
 }
+

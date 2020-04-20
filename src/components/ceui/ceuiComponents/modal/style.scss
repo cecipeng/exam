@@ -1,0 +1,99 @@
+// variables and mixins
+@import "../../../../styles/_base/base";
+
+:global {
+  .com-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 unit(20);
+    min-width: unit(100);
+    height: unit(40);
+    line-height: unit(40);
+    font-size: unit(14);
+    color: #666;
+    border-radius: unit(3);
+    background-color: #fff;
+    border: 1px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    &.com-btn-main {
+      color: #fff;
+      background-color: $main;
+      &:hover {
+        background-color: lighten($main,3%)
+      }
+      &:active {
+        background-color: darken($main,3%)
+      }
+    }
+    &.com-btn-default {
+      border-color: #ddd;
+      &:hover {
+        background-color: #eee
+      }
+      &:active {
+        background-color: #ddd
+      }
+    }
+    & + .com-btn {
+      margin-left: unit(15);
+    }
+    &:active,&:hover,&:visited,&:focus {
+      outline: none;
+    }
+  }
+
+  .com-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    .modal-dialog {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: unit(200);
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border-radius: unit(5);
+    }
+    .modal-header {
+      padding: 0 unit(20);
+      height: unit(50);
+      line-height: unit(50);
+      font-size: unit(20);
+      color: #fff;
+      background-color: $main;
+    }
+    .modal-body {
+      min-height: unit(150);
+      padding: unit(20);
+      font-size: unit(14);
+      color: #666;
+    }
+    .modal-footer {
+      padding: unit(10);
+      text-align: center;
+      border-top: 1px solid #ddd;
+    }
+    .close-modal {
+      position: absolute;
+      top: unit(10);
+      right: unit(20);
+      width: unit(32);
+      height: unit(32);
+      background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7UlEQVRYR+2W0Q3CMAxEz3swAWIC9oAhYQ8mQJ2APVxFKlIUtcmdi9oipb+1716cSxTDzp/t7I8OcNwJuPvZzIZfZKSmtTgBd38DGMzsvgbC3R8A0mIuczo1gNR4A/CMQkzmVY1qBhiBpemwvc0QskI5iNLTBEjCiqBSm7QpABZCNZcAWhARcxlgCSJqHgIoIabwhY8rnYHyuGWrTr/Cd8V/AuR7vvkWzAVusxDWjKIQdAYYA6amDDMFoAgrtdQ9oAq2bkxpAhHzrwHbe9wHibu/AHyir6FiEiczu0pPsjXvQKWXOgWKoFrbAfoERvsQvCF/D14QAAAAAElFTkSuQmCC');
+      background-repeat: no-repeat;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+}

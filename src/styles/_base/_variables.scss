@@ -118,15 +118,4 @@ $com-height-s:          unit(20);
 //--------------------- media ---------------------//
 
 $mq-s:                  max-width $min-w;
-// $mq-n:                  1024px 1200px;
-// $mq-l:                  1000px;
-// $mq-h:                  1600px;
-// media query
-// @example:
-// 示例scss:
-//   .foo{
-//     width: 500px;
-//     @include breakpoint($mq-n){
-//       width: 200px;
-//     }
-//   }
+

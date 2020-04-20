@@ -41,8 +41,8 @@
 $fzrem: 30;
 
 @function unit($px, $basefzrem:$fzrem) {
-  // @return $px * 1px;
-  @return $px / $basefzrem * 1rem;
+  @return $px * 1px;
+  // @return $px / $basefzrem * 1rem;
 }
 
 

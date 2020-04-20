@@ -23,10 +23,6 @@ exports.vendor = []
 
 // 自定义的 loaders
 exports.loaders = [
-  // {
-  //   test: /\.mdx$/i,
-  //   loader: 'babel-loader!markdown-component-loader'
-  // },
   {
     test: /\.md$/,
     loader: 'babel-loader!react-markdown-loader'

@@ -1,12 +1,8 @@
 import { router } from '@gem-mine/durex'
-
+import { asyncLoad } from 'global/util/async-load'
 // 组件引入
 import NotFound from 'components/common/exception/404'
 import Forbidden from 'components/common/exception/403'
-
-// 路由引入
-import ceuiRoutes from './ceui' // TODO 按模块拆分文件
-import chartRoomRoutes from './chartRoom'
 
 /**
  * 路由配置，包括：
@@ -37,6 +33,22 @@ router.config({
  * exact: 可选 {boolean}是否完全匹配
  */
 router.register({
-  ceui: ceuiRoutes, // TODO 注册路由
-  chartRoom: chartRoomRoutes
+  ceui: {
+    path: '/',
+    component: asyncLoad('components/ceui'),
+    description: '组件列表',
+    index: true,
+    sub: {
+      homepage: {
+        component: asyncLoad('components/ceui/pages/HomePage'),
+        description: '首页',
+        index: true
+      },
+      list: {
+        path: '/list',
+        component: asyncLoad('components/ceui/pages/List'),
+        description: '组件列表'
+      }
+    }
+  }
 })
